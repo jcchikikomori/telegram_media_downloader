@@ -51,6 +51,18 @@ lib64
 *.session
 *.session-journal
 
+#Configurations
+config.yaml
+data.yaml
+.configs/*
+!.configs/.gitinclude
+
+#Unused Files
+Rubbish/
+*.ini
+tests/
+test_user_filter.py
+
 #Downloaded documents
 documents/
 audio/

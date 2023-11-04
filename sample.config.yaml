@@ -10,10 +10,11 @@ chat:
 ids_to_retry: []
 media_types:
   - audio
-  - document
   - photo
   - video
+  - document
   - voice
+  - video_note
   - animation #gif
 file_formats:
   audio:
@@ -52,4 +53,4 @@ language: EN
 web_login_secret: 123
 allowed_user_ids:
   - "me"
-date_format: "%Y_%m"
+date_format: '%Y-%m-%d'

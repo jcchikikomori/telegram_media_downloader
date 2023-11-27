@@ -386,8 +386,11 @@ class Application:
         self.debug_web: bool = False
         self.log_level: str = "INFO"
         self.start_timeout: int = 60
-        self.allowed_user_ids: yaml.comments.CommentedSeq = []
+        self.allowed_user_ids: yaml.comments.CommentedSeq = yaml.comments.CommentedSeq(
+            []
+        )
         self.date_format: str = "%Y_%m"
+        self.drop_no_audio_video: bool = False
 
         self.forward_limit_call = LimitCall(max_limit_call_times=33)
         self.loop = asyncio.new_event_loop()
@@ -511,6 +514,10 @@ class Application:
             "date_format",
             self.date_format,
             str,
+        )
+
+        self.drop_no_audio_video = get_config(
+            _config, "drop_no_audio_video", self.drop_no_audio_video, bool
         )
 
         try:
